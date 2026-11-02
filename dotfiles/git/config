@@ -1,0 +1,36 @@
+[commit]
+	gpgsign = true
+
+[credential "https://gist.github.com"]
+	helper = ""
+	helper = "/usr/bin/gh auth git-credential"
+
+[credential "https://github.com"]
+	helper = ""
+	helper = "/usr/bin/gh auth git-credential"
+
+[filter "lfs"]
+	clean = "git-lfs clean -- %f"
+	process = "git-lfs filter-process"
+	required = true
+	smudge = "git-lfs smudge -- %f"
+
+[gpg]
+	format = "ssh"
+
+[gpg "ssh"]
+	program = "/opt/1Password/op-ssh-sign"
+
+[init]
+	defaultBranch = "main"
+
+[pull]
+	rebase = true
+
+[push]
+	autoSetupRemote = true
+
+[user]
+	email = "i@nvirellia.im"
+	name = "Noa Virellia"
+	signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOOz0CMmkGSXv4H77rmrmvadltAlwAZeVimxGoUAfArs"

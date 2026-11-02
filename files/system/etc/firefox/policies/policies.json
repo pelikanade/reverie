@@ -1,8 +1,6 @@
 {
   "policies": {
-    "GenerativeAI": {
-      "Enabled": false
-    },
+    "DisablePocket": true,
     "DisplayBookmarksToolbar": "never",
     "ExtensionSettings": {
       "Tab-Session-Manager@sienori": {
@@ -81,6 +79,9 @@
         "installation_mode": "force_installed"
       }
     },
+    "GenerativeAI": {
+      "Enabled": false
+    },
     "Homepage": {
       "StartPage": "previous-session"
     },
@@ -88,13 +89,17 @@
     "OverrideFirstRunPage": "",
     "PasswordManagerEnabled": false,
     "Preferences": {
+      "browser.aboutaddons.novaThemesPickerEnabled": false,
       "browser.ctrlTab.sortByRecentlyUsed": true,
       "browser.newtabpage.activity-stream.feeds.topsites": false,
+      "browser.newtabpage.activity-stream.nova.enabled": false,
+      "browser.nova.enabled": false,
       "browser.translations.automaticallyPopup": false,
       "gfx.webrender.all": true,
       "media.ffmpeg.vaapi.enabled": true,
       "media.hardware-video-decoding.force-enabled": true,
       "middlemouse.paste": false,
+      "pdfjs.enableNova": false,
       "sidebar.revamp": false,
       "toolkit.legacyUserProfileCustomizations.stylesheets": true
     },

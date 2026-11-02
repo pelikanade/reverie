@@ -1,0 +1,24 @@
+right_format = "$memory_usage$battery$time"
+
+[battery]
+format = "[$symbol$percentage]($style) / "
+[[battery.display]]
+style = "bold green"
+threshold = 100
+
+[character]
+error_symbol = "[](fg:#5BCEFA)[](bg:#F5A9B8 fg:#5BCEFA)[](bg:#FFFFFF fg:#F5A9B8)[](bg:#F5A9B8 fg:#FFFFFF)[](bg:#5BCEFA fg:#F5A9B8)[](fg:#5BCEFA)"
+format = "$symbol "
+success_symbol = "[](fg:#5BCEFA)[](bg:#F5A9B8 fg:#5BCEFA)[](bg:#FFFFFF fg:#F5A9B8)[](bg:#F5A9B8 fg:#FFFFFF)[](bg:#5BCEFA fg:#F5A9B8)[](fg:#5BCEFA)"
+
+[memory_usage]
+disabled = false
+format = "[$ram_pct]($style) / "
+symbol = ""
+threshold = -1
+
+[time]
+disabled = false
+format = "[$time]($style) "
+time_format = "%R"
+utc_time_offset = "+8"

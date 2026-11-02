@@ -5,17 +5,25 @@ modules:
       - source: system
         destination: /
 
-  - from-file: nix.yml
+  - type: nix
+    source: local
+    settings:
+      # The CN mirrors sit ahead of cache.nixos.org, which still serves the
+      # fresh paths they have not picked up yet.
+      substituters:
+        - https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store
+        - https://mirror.sjtu.edu.cn/nix-channels/store
+        - https://cache.nixos.org
+      extra-substituters:
+        - https://nix-community.cachix.org
+      extra-trusted-public-keys:
+        - nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=
 
   - type: dnf
     repos:
       files:
         - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
         - https://cli.github.com/packages/rpm/gh-cli.repo
-      copr:
-        - atim/starship
-        - agriffis/neovim-nightly
-        - varlad/zellij
     install:
       packages:
         - fish
@@ -25,70 +33,57 @@ modules:
         - ghostty
         - zed
         - neovim
-        - python3-neovim
         - ripgrep
         - atuin
         - zoxide
         - lazygit
         - ibus-rime
         - librime-lua
-        - zellij
         - tela-icon-theme
-        - yazi
         - loupe
         - gnome-tweaks
         - kleopatra
         - direnv
+        # The FUSE 2 runtime AppImages mount themselves with.
         - fuse-libs
+        - eza
+        - fastfetch
+        - du-dust
+        - duf
+        - fzf
+        - fd-find
+        - git-lfs
+        - tailscale
+        - localsend-bin
         - https://downloads.1password.com/linux/rpm/stable/x86_64/1password-latest.rpm
         - https://downloads.1password.com/linux/rpm/stable/x86_64/1password-cli-latest.x86_64.rpm
-        - https://github.com/xpipe-io/xpipe/releases/latest/download/xpipe-installer-linux-x86_64.rpm
-        - https://github.com/SagerNet/sing-box/releases/download/v1.14.0-beta.4/SFL-1.14.0-beta.4-x86_64.rpm
-        - https://github.com/AsterisMono/Aster/releases/download/151.0.7922.71-1/aster-chromium.rpm
-        - https://github.com/AsterisMono/codex-desktop-linux/releases/download/latest/codex-desktop.rpm
     remove:
       packages:
         - nvtop
-        - htop
-
-  - type: rpm-ostree
-    repos:
-      - claude-code.repo
-      - netbird.repo
-    install:
-      - claude-code
-      - netbird
-      - netbird-ui
-
-  - type: systemd
-    system:
-      enabled:
-        - netbird.service
-        - sing-box-daemon.service
 
   - type: script
     scripts:
       - rime-ice.sh
+      - sing-box-sfl.sh
 
-  - type: chezmoi
-    repository: "https://github.com/AsterisMono/dotfiles"
-    file-conflict-policy: replace
+  - type: systemd
+    system:
+      enabled:
+        - tailscaled.service
+        - sing-box-daemon.service
+    user:
+      enabled:
+        - tailscale-systray.service
+
+  - type: hjem
+    source: local
+    flake: github:pelikanade/reverie
 
   - type: default-flatpaks
     configurations:
-      - notify: false
-        install:
-          - be.alexandervanhee.gradia
-          - com.mattjakeman.ExtensionManager
-          - com.slack.Slack
+      - install:
           - com.tencent.wemeet
-          - io.github.kolunmi.Bazaar
-          - org.mozilla.Thunderbird
           - org.telegram.desktop
-          - page.tesk.Refine
-          - org.localsend.localsend_app
-          - io.missioncenter.MissionCenter
-          - io.github.pwr_solaar.solaar
 
   - type: gnome-extensions
     install:
@@ -96,11 +91,9 @@ modules:
       - 3193 # Blur my Shell
       - 517 # Caffeine
       - 779 # Clipboard Indicator
-      - 1160 # Dash to Panel
       - 6807 # System Monitor
-      - 6099 # PaperWM
       - 307 # Dash to Dock
-      - 1262 # Bing Wallpaper
+      - 7065 # Tiling Shell
 
   - type: gschema-overrides
     include:
@@ -110,8 +103,5 @@ modules:
     fonts:
       nerd-fonts:
         - FiraCode
-      url-fonts:
-        - name: Maple Mono
-          url: https://github.com/subframe7536/maple-font/releases/download/v7.9/MapleMonoNormalNL-OTF.zip
 
   - type: signing

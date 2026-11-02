@@ -1,0 +1,10 @@
+auto_sync = false
+prefers_reduced_motion = true
+style = "compact"
+update_check = false
+
+[ai]
+enabled = false
+
+[sync]
+records = false

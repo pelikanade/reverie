@@ -1,0 +1,207 @@
+{
+  "agent": {
+    "default_model": {
+      "enable_thinking": true,
+      "model": "anthropic/claude-fable-5",
+      "provider": "openrouter"
+    },
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": [],
+    "tool_permissions": {
+      "tools": {
+        "terminal": {
+          "default": "allow"
+        }
+      }
+    }
+  },
+  "agent_servers": {
+    "codex-acp": {
+      "default_config_options": {
+        "mode": "agent",
+        "reasoning_effort": "high"
+      },
+      "type": "registry"
+    },
+    "qwen-code": {
+      "type": "registry"
+    }
+  },
+  "auto_install_extensions": {
+    "astro": true,
+    "biome": true,
+    "html": true,
+    "just": true,
+    "nix": true,
+    "nord": true,
+    "nordic-theme": true,
+    "nvim-nightfox": true,
+    "svelte": true,
+    "terraform": true
+  },
+  "buffer_font_fallbacks": [
+    "Source Han Sans SC"
+  ],
+  "buffer_font_family": "FiraCode Nerd Font",
+  "buffer_font_size": 15.0,
+  "buffer_font_weight": 400,
+  "cli_default_open_behavior": "new_window",
+  "colorize_brackets": true,
+  "cursor_blink": false,
+  "diagnostics": {
+    "inline": {
+      "enabled": true
+    }
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+  "indent_guides": {
+    "coloring": "indent_aware",
+    "enabled": true
+  },
+  "languages": {
+    "JavaScript": {
+      "code_actions_on_format": {
+        "source.addMissingImports.ts": true,
+        "source.fixAll.eslint": true,
+        "source.fixAll.ts": true,
+        "source.removeUnusedImports.ts": true
+      },
+      "language_servers": [
+        "typescript-language-server",
+        "!vtsls",
+        "..."
+      ]
+    },
+    "Nix": {
+      "format_on_save": "on",
+      "formatter": {
+        "external": {
+          "command": "nixfmt"
+        }
+      },
+      "language_servers": [
+        "nixd",
+        "!nil",
+        "..."
+      ]
+    },
+    "TSX": {
+      "code_actions_on_format": {
+        "source.addMissingImports.ts": true,
+        "source.fixAll.eslint": true,
+        "source.fixAll.ts": true,
+        "source.removeUnusedImports.ts": true
+      },
+      "language_servers": [
+        "typescript-language-server",
+        "!vtsls",
+        "..."
+      ]
+    },
+    "TypeScript": {
+      "code_actions_on_format": {
+        "source.addMissingImports.ts": true,
+        "source.fixAll.eslint": true,
+        "source.fixAll.ts": true,
+        "source.removeUnusedImports.ts": true
+      },
+      "language_servers": [
+        "typescript-language-server",
+        "!vtsls",
+        "..."
+      ]
+    }
+  },
+  "load_direnv": "direct",
+  "lsp": {
+    "biome": {
+      "settings": {
+        "require_config_file": true
+      }
+    },
+    "json-language-server": {
+      "settings": {
+        "json": {
+          "schemas": [
+            {
+              "fileMatch": [
+                "package.json"
+              ],
+              "url": "https://www.schemastore.org/package"
+            }
+          ]
+        }
+      }
+    },
+    "yaml-language-server": {
+      "settings": {
+        "yaml": {
+          "completion": true,
+          "schemaStore": {
+            "enable": true
+          }
+        }
+      }
+    }
+  },
+  "project_panel": {
+    "dock": "left"
+  },
+  "rounded_selection": false,
+  "soft_wrap": "editor_width",
+  "status_bar": {
+    "active_language_button": false,
+    "cursor_position_button": false
+  },
+  "tab_bar": {
+    "show_nav_history_buttons": false,
+    "show_tab_bar_buttons": false
+  },
+  "tabs": {
+    "git_status": true,
+    "show_diagnostics": "errors"
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "terminal": {
+    "blinking": "off",
+    "cursor_shape": "bar",
+    "scrollbar": {
+      "show": "never"
+    },
+    "shell": {
+      "program": "/usr/bin/fish"
+    }
+  },
+  "theme": {
+    "dark": "Nord Dark",
+    "light": "Nord Light",
+    "mode": "dark"
+  },
+  "title_bar": {
+    "show_user_picture": false
+  },
+  "toolbar": {
+    "quick_actions": false
+  },
+  "ui_font_fallbacks": [
+    "Source Han Sans SC"
+  ],
+  "ui_font_family": "FiraCode Nerd Font",
+  "ui_font_size": 16.0,
+  "ui_font_weight": 400,
+  "vim": {
+    "use_system_clipboard": "on_yank"
+  },
+  "vim_mode": true,
+  "which_key": {
+    "enabled": true
+  }
+}
