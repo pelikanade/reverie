@@ -65,6 +65,7 @@ modules:
     scripts:
       - rime-ice.sh
       - sing-box-sfl.sh
+      - magpie.sh
 
   - type: systemd
     system:
@@ -78,6 +79,9 @@ modules:
   - type: hjem
     source: local
     flake: github:pelikanade/reverie
+
+  - type: justfiles
+    validate: true
 
   - type: default-flatpaks
     configurations:
