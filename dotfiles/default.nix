@@ -17,8 +17,17 @@ let
         if test -d $plugin_dir/completions
             set fish_complete_path $fish_complete_path[1] $plugin_dir/completions $fish_complete_path[2..-1]
         end
-        for file in $plugin_dir/conf.d/*.fish
-            source $file
+        # Some plugins install their abbreviations from init.fish alone; their
+        # conf.d entry point only runs the fisher bootstrap, which finds
+        # nothing here because the functions come from fish_function_path.
+        if test -f $plugin_dir/init.fish
+            source $plugin_dir/init.fish
+        end
+        if test -d $plugin_dir/conf.d
+            # An unmatched glob stays literal, so filter before sourcing.
+            for file in $plugin_dir/conf.d/*.fish
+                test -f $file; and source $file
+            end
         end
     end
   '';
