@@ -8,3 +8,6 @@ cosign.private
 # pre-commit
 .pre-commit-config.yaml
 /.bluebuild-scripts_*
+
+# artifacts
+*.iso*
