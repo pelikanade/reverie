@@ -1,2 +1,2 @@
 Host *
-  IdentityAgent /home/nvirellia/.1password/agent.sock
+  IdentityAgent /home/pelikanade/.1password/agent.sock

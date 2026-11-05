@@ -3,4 +3,3 @@ cursor-style = bar
 cursor-style-blink = false
 mouse-hide-while-typing = false
 quit-after-last-window-closed = false
-theme = Nord

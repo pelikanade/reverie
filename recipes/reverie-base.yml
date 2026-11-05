@@ -8,8 +8,6 @@ modules:
   - type: nix
     source: local
     settings:
-      # The CN mirrors sit ahead of cache.nixos.org, which still serves the
-      # fresh paths they have not picked up yet.
       substituters:
         - https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store
         - https://mirror.sjtu.edu.cn/nix-channels/store
@@ -43,8 +41,8 @@ modules:
         - loupe
         - gnome-tweaks
         - kleopatra
+        - webkit2gtk4.1
         - direnv
-        # The FUSE 2 runtime AppImages mount themselves with.
         - fuse-libs
         - eza
         - fastfetch
@@ -61,11 +59,18 @@ modules:
       packages:
         - nvtop
 
+  - type: install-binary
+    source: local
+    binaries:
+      magpie:
+        url: https://github.com/yetone/magpie-releases/releases/latest/download/magpie-linux-amd64
+        icon: https://usemagpie.ai/img/icon-256.png
+      omp: https://github.com/can1357/oh-my-pi/releases/latest/download/omp-linux-x64
+
   - type: script
     scripts:
       - rime-ice.sh
       - sing-box-sfl.sh
-      - magpie.sh
 
   - type: systemd
     system:
@@ -85,7 +90,9 @@ modules:
 
   - type: default-flatpaks
     configurations:
-      - install:
+      - scope: system
+        install:
+          - com.mattjakeman.ExtensionManager
           - com.tencent.wemeet
           - org.telegram.desktop
 
@@ -97,7 +104,6 @@ modules:
       - 4839 # Clipboard History
       - 6807 # System Monitor
       - 307 # Dash to Dock
-      - 7065 # Tiling Shell
 
   - type: gschema-overrides
     include:

@@ -1,6 +1,6 @@
 { pkgs, lib }:
 let
-  home = "/home/nvirellia";
+  home = "/home/pelikanade";
 
   # Fish plugins are plain scripts, so they are loaded from their nixpkgs
   # sources instead of being installed.

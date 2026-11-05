@@ -8,8 +8,17 @@ chmod 0755 /nix
 
 dnf -y install nix nix-daemon
 
+# No package creates the store itself: nix-filesystem only ships the
+# directories around it, nix-daemon's rule covers its socket and build dirs,
+# and the daemon does not create the store when it starts. On a fresh /var/nix
+# -- which the bind mount above exposes as /nix -- every nix command therefore
+# died with
+#   error: opening file "/nix/store": No such file or directory
+# and only a root nix process, which uses the store directly instead of going
+# through the daemon, would have created it.
 cat >/usr/lib/tmpfiles.d/nix-store.conf <<'EOF'
 d /var/nix 0755 root root -
+d /var/nix/store 1775 root root -
 EOF
 
 cat >/usr/lib/systemd/system/nix.mount <<'EOF'

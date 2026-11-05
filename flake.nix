@@ -19,7 +19,7 @@
     {
       packages.${system}.hjem = hjem.packages.${system}.hjem;
 
-      hjemConfigurations.nvirellia.manifest = import ./dotfiles {
+      hjemConfigurations.pelikanade.manifest = import ./dotfiles {
         inherit pkgs;
         inherit (nixpkgs) lib;
       };
