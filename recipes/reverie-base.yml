@@ -94,7 +94,7 @@ modules:
       - 615 # AppIndicator and KStatusNotifierItem Support
       - 3193 # Blur my Shell
       - 517 # Caffeine
-      - 779 # Clipboard Indicator
+      - 4839 # Clipboard History
       - 6807 # System Monitor
       - 307 # Dash to Dock
       - 7065 # Tiling Shell
