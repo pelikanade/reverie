@@ -1,5 +1,6 @@
 command = /usr/bin/fish
 cursor-style = bar
 cursor-style-blink = false
+font-family = FiraCode Nerd Font Propo
 mouse-hide-while-typing = false
 quit-after-last-window-closed = false
