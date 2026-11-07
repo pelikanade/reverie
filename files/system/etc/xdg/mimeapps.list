@@ -1,0 +1,13 @@
+# Default Browser Associations
+#
+# /usr/share/applications/mimeapps.list ships Firefox as the default handler for
+# web content, and this image does not carry Firefox. A dangling default is not a
+# harmless one: GIO drops the missing entry and, with no default left at all,
+# `gio open` refuses to open links ("no default application for text/html").
+# The earlier XDG config dir is read first, so the associations below are what
+# actually resolves web content.
+[Default Applications]
+text/html=vivaldi-stable.desktop
+application/xhtml+xml=vivaldi-stable.desktop
+x-scheme-handler/http=vivaldi-stable.desktop
+x-scheme-handler/https=vivaldi-stable.desktop
