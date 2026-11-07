@@ -9,6 +9,14 @@ screenshot=['<Shift>Print', '<Super><Shift>p']
 switch-input-source=['<Control>space']
 switch-input-source-backward=['<Shift><Control>space']
 
+[org.gnome.shell.extensions.blur-my-shell.applications]
+blur=true
+dynamic-opacity=false
+enable-all=false
+pipeline='pipeline_default'
+static-blur=false
+whitelist=['com.mitchellh.ghostty', 'dev.zed.Zed']
+
 [org.gnome.shell.extensions.blur-my-shell.dash-to-dock]
 style-dash-to-dock=2
 
