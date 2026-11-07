@@ -32,9 +32,23 @@ let
     end
   '';
 
+  # hjem links $HOME at the paths the manifest names, so they have to exist. A
+  # path from this repository is copied into a store path of its own: a path
+  # inside the flake tree only exists once Nix has materialised that tree, which
+  # it does lazily, and hjem then fails to activate every file with ENOENT.
+  # Anything that is already in the store, such as the writeText result above,
+  # is left alone.
+  selfContained =
+    source:
+    if builtins.isPath source then
+      builtins.toFile (baseNameOf (toString source)) (builtins.readFile source)
+    else
+      source;
+
   # The repository owns these files, so whatever is already there is replaced.
   file = type: target: source: {
-    inherit type source;
+    inherit type;
+    source = selfContained source;
     target = "${home}/${target}";
     clobber = true;
   };

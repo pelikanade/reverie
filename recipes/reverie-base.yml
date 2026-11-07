@@ -85,9 +85,6 @@ modules:
     source: local
     flake: github:pelikanade/reverie
 
-  - type: justfiles
-    validate: true
-
   - type: default-flatpaks
     configurations:
       - scope: system

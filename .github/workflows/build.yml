@@ -9,6 +9,7 @@ on:
       - "dotfiles/**"
       - "flake.nix"
       - "flake.lock"
+      - "justfile"
 
   pull_request:
   workflow_dispatch: # allow manually triggering builds
