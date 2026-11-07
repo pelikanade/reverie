@@ -1,0 +1,6 @@
+# Default Terminal Execution Specification (xdg-terminal-exec) default terminal.
+#
+# GIO (and therefore every app launched with Terminal=true) probes for
+# `xdg-terminal-exec` before its built-in fallback list, so this file is what
+# decides which terminal emulator GNOME hands off to.
+com.mitchellh.ghostty.desktop

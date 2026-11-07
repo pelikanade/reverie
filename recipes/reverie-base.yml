@@ -29,6 +29,7 @@ modules:
         - terra-release
         - starship
         - ghostty
+        - xdg-terminal-exec
         - zed
         - neovim
         - ripgrep
@@ -58,6 +59,8 @@ modules:
     remove:
       packages:
         - nvtop
+        - gnome-terminal
+        - ptyxis
 
   - type: install-binary
     source: local
