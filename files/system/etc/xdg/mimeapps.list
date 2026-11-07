@@ -7,7 +7,7 @@
 # The earlier XDG config dir is read first, so the associations below are what
 # actually resolves web content.
 [Default Applications]
-text/html=vivaldi-stable.desktop
-application/xhtml+xml=vivaldi-stable.desktop
-x-scheme-handler/http=vivaldi-stable.desktop
-x-scheme-handler/https=vivaldi-stable.desktop
+text/html=app.zen_browser.zen.desktop
+application/xhtml+xml=app.zen_browser.zen.desktop
+x-scheme-handler/http=app.zen_browser.zen.desktop
+x-scheme-handler/https=app.zen_browser.zen.desktop
