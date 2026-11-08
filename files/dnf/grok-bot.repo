@@ -1,0 +1,11 @@
+# grok-bot rewrites this file on every install and upgrade.
+# To disable the repository, set enabled=0 below; that setting is kept.
+# skip_if_unavailable=1 keeps dnf working when this repository cannot be reached.
+[grok-bot]
+name=Grok Bot
+baseurl=https://downloads.cursor.com/yumrepo/grok-bot
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://downloads.cursor.com/keys/anysphere.asc
+skip_if_unavailable=1
