@@ -22,14 +22,12 @@ modules:
       files:
         - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
         - https://cli.github.com/packages/rpm/gh-cli.repo
-        - grok-bot.repo
     install:
       packages:
         - fish
         - gh
         - terra-release
         - starship
-        - grok-bot
         - ghostty
         - xdg-terminal-exec
         - zed
@@ -43,7 +41,6 @@ modules:
         - tela-icon-theme
         - loupe
         - gnome-tweaks
-        - kleopatra
         - webkit2gtk4.1
         - direnv
         - fuse-libs
