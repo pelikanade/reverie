@@ -56,6 +56,7 @@ modules:
         - zen-browser
         - https://downloads.1password.com/linux/rpm/stable/x86_64/1password-latest.rpm
         - https://downloads.1password.com/linux/rpm/stable/x86_64/1password-cli-latest.x86_64.rpm
+        - https://github.com/SagerNet/sing-box/releases/download/v1.14.4/SFL-1.14.4-x86_64.rpm
     remove:
       packages:
         - nvtop
@@ -67,6 +68,7 @@ modules:
   - type: install-binary
     source: local
     binaries:
+      herdr: https://github.com/herdrdev/herdr/releases/latest/download/herdr-linux-x86_64
       magpie:
         url: https://github.com/yetone/magpie-releases/releases/latest/download/magpie-linux-amd64
         icon: https://usemagpie.ai/img/icon-256.png
@@ -75,7 +77,6 @@ modules:
   - type: script
     scripts:
       - rime-ice.sh
-      - sing-box-sfl.sh
 
   - type: systemd
     system:
